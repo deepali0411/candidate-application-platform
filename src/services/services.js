@@ -1,0 +1,1 @@
+export const fetchJobsUrl = "https://api.weekday.technology/adhoc/getSampleJdJSON";
