@@ -13,6 +13,10 @@ const Dashboard = (props) => {
     });
   }, [jdList]);
 
-  return <div className={styles.Dashboard}>{renderCards}</div>;
+  return (
+    <div className={styles.Dashboard}>
+      <div className={styles.cardsContainer}>{renderCards}</div>
+    </div>
+  );
 };
 export default Dashboard;

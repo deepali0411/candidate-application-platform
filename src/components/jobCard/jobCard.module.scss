@@ -1,0 +1,81 @@
+.container {
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.87);
+}
+.cardContainer {
+  border-radius: 1.6rem;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px;
+  max-width: 36rem;
+  padding: 1.6rem;
+  .firstSection {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    .companyDetail {
+      margin-left: 1.6rem;
+      text-align: left;
+      .companyName {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0;
+        letter-spacing: 0.1rem;
+        margin-bottom: 0.4rem;
+        color: #8b8b8b;
+      }
+      .jobRole {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+        font-weight: 500;
+      }
+      .location {
+        font-size: 11px;
+        font-weight: 500;
+        margin-top: 5px;
+      }
+    }
+  }
+  .secondSection {
+    font-size: 1.4rem;
+    font-weight: 500;
+    width: 100%;
+    color: rgb(77, 89, 106);
+    margin: 0.8rem 0;
+  }
+  .thirdSection {
+    width: 100%;
+    .heading {
+    line-height: 1.5;
+    font-weight: 500;
+    margin: 0;
+}
+.description{
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+        .about {
+            font-weight: 600;
+        }
+        mask-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    
+    }
+    .button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    .showMore {
+        background-color: white;
+        border: none;
+        color: #4943da;
+        margin-top: 0.8rem;
+        cursor: pointer;
+    }
+    }
+  }
+}
