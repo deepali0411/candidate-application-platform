@@ -1,11 +1,11 @@
 import { fetchJobsUrl } from "../services/services";
 
-export const fetchJobsFromApi = async () => {
+export const fetchJobsFromApi = async (offset, limit) => {
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   const body = JSON.stringify({
-    limit: 10,
-    offset: 0,
+    limit,
+    offset,
   });
 
   const requestOptions = {

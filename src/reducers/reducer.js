@@ -1,7 +1,7 @@
 export const changeTheData = (state = [], actions) => {
     switch (actions?.type) {
       case "set": {
-        return actions?.payload;
+        return state !=[]? [...state,...actions?.payload] :  actions?.payload;
       }
       default:
         return state;

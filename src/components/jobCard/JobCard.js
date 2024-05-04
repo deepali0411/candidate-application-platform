@@ -2,7 +2,6 @@ import react from "react";
 import styles from "./jobCard.module.scss";
 
 const JobCard = ({ cardData }) => {
-  console.log("cardData: ", cardData);
 
   const estimatedSalary = (min, max, salaryCurrencyCode) =>
     `Estimated Salary ${
