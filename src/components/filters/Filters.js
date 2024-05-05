@@ -24,7 +24,6 @@ const Filters = ({ filteredList, setFilteredList }) => {
 
   useEffect(()=> {
       const newList = getFilteredList({searchInput, roles, experience, work, techStack, minBasePay, jdList});
-      console.log("hi", newList);
       setFilteredList(newList);
   }, [searchInput, roles, experience, work, techStack, minBasePay, jdList])
 
@@ -34,7 +33,6 @@ const Filters = ({ filteredList, setFilteredList }) => {
   };
 
   const handleSelect = (e, label) => {
-    console.log('e, label: ', e, label);
      switch (label) {
         case "Roles":
             setRoles(()=> e.map(data => data.value))

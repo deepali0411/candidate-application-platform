@@ -28,10 +28,6 @@ export const getFilteredList = ({
       return acc.filter((data) => data?.minExp >= experience);
     } else if (curr === "minBasePay" && minBasePay > 0) {
       return acc.filter((data) => {
-        console.log(
-          "data?.minJdSalary >= minBasePay",
-          data?.minBasePay >= minBasePay
-        );
         return data?.minJdSalary >= minBasePay;
       });
     } else if (curr === "roles" && roles.length > 0) {

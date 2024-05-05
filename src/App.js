@@ -23,8 +23,10 @@ function App() {
     dispatch(setJdList(data?.jdList));
   };
   useEffect(() => {
-    if (!loading) return;
-    getJobsData(offset, LIMIT);
+    if (loading && offset <= totalCount) {   
+      setOffset((offset) => offset + LIMIT);
+      getJobsData(offset + LIMIT, LIMIT);
+    }
   }, [loading]);
 
   const handleInfiniteScroll = async () => {
@@ -34,7 +36,6 @@ function App() {
         window.innerHeight + document.documentElement.scrollTop
       ) {
         setLoading(true);
-        setOffset((offset) => offset + LIMIT);
       }
     } catch (err) {
       console.error(err);

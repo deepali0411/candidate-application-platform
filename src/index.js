@@ -7,7 +7,7 @@ import store from './reducers/store';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-store.subscribe(() => console.log(store.getState()));
+store.subscribe(() => store.getState());
 root.render(
   <Provider store={store}>
     <App />

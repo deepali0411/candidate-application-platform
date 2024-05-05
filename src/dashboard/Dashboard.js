@@ -9,7 +9,6 @@ import styles from "./dashboard.module.scss";
 const Dashboard = (props) => {
   const jdList = useSelector((state) => state.changeTheData) || [];
   const [filteredList, setFilteredList] = useState([]);
-  console.log('filteredList: ', filteredList);
 
   useEffect(()=> {
     setFilteredList(jdList);
