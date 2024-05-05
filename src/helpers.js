@@ -16,7 +16,7 @@ export const getFilteredList = ({
     "minBasePay",
   ];
   const newList = array.reduce((acc, curr) => {
-    if (curr === searchInput) {
+    if (curr === "searchInput") {
       return acc.filter(
         (data) =>
           (data?.companyName)

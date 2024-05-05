@@ -1,6 +1,23 @@
 .Dashboard {
     box-sizing: border-box;
-    padding: 1.6rem;
+    .weekDay {
+        width: 100%;
+        text-align: left;
+        padding-left: 3.2rem;
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        font-size: 3.2rem;
+        border-bottom: 0.1rem solid rgb(204, 204, 204);
+        position: fixed;
+        background-color: #fff;
+        z-index: 1;
+    }
+    .body {
+        padding: 1.6rem;    
+        padding-top: 9.6rem;
+    }
     .cardsContainer {
         display: grid;
         grid-template-columns:1fr 1fr 1fr;

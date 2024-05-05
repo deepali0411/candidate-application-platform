@@ -23,8 +23,11 @@ const Dashboard = (props) => {
 
   return (
     <div className={styles.Dashboard}>
+      <h1 className={styles.weekDay}>WeekDay</h1>
+      <div className={styles.body}>
         <Filters setFilteredList={setFilteredList} filteredList={filteredList} />
       <div className={styles.cardsContainer}>{renderCards}</div>
+      </div>
     </div>
   );
 };
