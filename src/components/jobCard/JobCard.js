@@ -1,7 +1,11 @@
-import react from "react";
+import react, {useState} from "react";
 import styles from "./jobCard.module.scss";
+import Modal from "../modal/Modal";
+import CompanyDescription from "../companyDescription/CompanyDescription";
 
 const JobCard = ({ cardData }) => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
   const estimatedSalary = (min, max, salaryCurrencyCode) =>
     `Estimated Salary ${
       salaryCurrencyCode === "USD" ? "$" : "Rs"
@@ -39,8 +43,11 @@ const JobCard = ({ cardData }) => {
             {cardData?.jobDetailsFromCompany.substring(0, 350)}...
           </div>
           <div className={styles.button}>
-            <button className={styles.showMore}>Show More</button>
+            <button className={styles.showMore} onClick={()=> setIsOpenModal(true)}>Show More</button>
           </div>
+          {isOpenModal && <Modal hideModal={()=> setIsOpenModal(false)}>
+            <CompanyDescription description={cardData?.jobDetailsFromCompany} companyName={cardData?.companyName} />
+            </Modal>}
         </div>
         {cardData?.minExp && (
           <div className={styles.lastSection}>
