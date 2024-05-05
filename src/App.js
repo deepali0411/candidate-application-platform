@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
@@ -22,8 +23,9 @@ function App() {
     setLoading(false);
     dispatch(setJdList(data?.jdList));
   };
+
   useEffect(() => {
-    if (loading && offset <= totalCount) {   
+    if (loading && offset <= totalCount) {
       setOffset((offset) => offset + LIMIT);
       getJobsData(offset + LIMIT, LIMIT);
     }
@@ -42,6 +44,7 @@ function App() {
     }
   };
 
+  // Infinite scroll
   useEffect(() => {
     window.addEventListener("scroll", handleInfiniteScroll);
     return () => window.removeEventListener("scroll", handleInfiniteScroll);

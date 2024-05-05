@@ -41,11 +41,10 @@ export const WORK = [
     { value: "remote", label: "Remote" },
 ]
 
-export const TECH_STACK = [
-    { value: "python", label: "Python" },
-    { value: "jave", label: "Java" },
-    { value: "javascript", label: "Javascript" },
-    { value: "c++", label: "C++" },
-    { value: "react", label: "React" },
-    { value: "nodejs", label: "Node JS" },
-]
+export const LABEL = {
+    ROLES: "Roles",
+    EXPERIENCE: "experience",
+    WORK: "Work",
+    MIN_BASE_PAY: "Min Base Pay",
+    COMPANY_LOCATION: "Company/Location"
+}

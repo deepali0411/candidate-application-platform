@@ -14,6 +14,7 @@ const Dashboard = (props) => {
     setFilteredList(jdList);
   },[])
 
+  // job list
   const renderCards = useMemo(() => {
     return filteredList?.map((data) => {
       return <JobCard cardData={data} key={data?.jdUid} />;

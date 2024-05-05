@@ -8,24 +8,24 @@ import {
   MIN_BASE_PAY,
   WORK,
   ROLES,
-  TECH_STACK,
+  LABEL,
 } from "../../constants";
 
 import styles from "./filters.module.scss";
 
-const Filters = ({ filteredList, setFilteredList }) => {
+const Filters = ({ setFilteredList }) => {
     const jdList = useSelector((state) => state.changeTheData) || [];
   const [searchInput, setSearchInput] = useState("");
   const [roles, setRoles] = useState([]);
   const [experience, setExperience] = useState(0);
   const [work, setWork] = useState([]);
-  const [techStack, setTechStack] = useState([]);
   const [minBasePay, setMinBasePay] = useState(0);
 
   useEffect(()=> {
-      const newList = getFilteredList({searchInput, roles, experience, work, techStack, minBasePay, jdList});
+    // rendering filterd data
+      const newList = getFilteredList({searchInput, roles, experience, work, minBasePay, jdList});
       setFilteredList(newList);
-  }, [searchInput, roles, experience, work, techStack, minBasePay, jdList])
+  }, [searchInput, roles, experience, work, minBasePay, jdList])
 
   const handleChangeInput = (e) => {
     const value = e.target.value;
@@ -34,19 +34,16 @@ const Filters = ({ filteredList, setFilteredList }) => {
 
   const handleSelect = (e, label) => {
      switch (label) {
-        case "Roles":
+        case LABEL.ROLES:
             setRoles(()=> e.map(data => data.value))
             break;
-        case "Experience":
+        case LABEL.EXPERIENCE:
             setExperience(e.value)
             break;
-        case "Work":
+        case LABEL.WORK:
             setWork(()=> e.map(data => data.value))
             break;
-        case "Tech stack":
-            setTechStack(()=> e.map(data => data.value))
-            break;
-        case "Min Base Pay":
+        case LABEL.MIN_BASE_PAY:
             setMinBasePay(e.value)
             break;
      
@@ -57,34 +54,39 @@ const Filters = ({ filteredList, setFilteredList }) => {
 
   return (
     <div className={styles.container}>
+      {/* adding filter for roles */}
       <SelectComponent
         options={ROLES}
         isMulti
-        placeholder="Roles"
-        label="Roles"
+        placeholder={LABEL.ROLES}
+        label={LABEL.ROLES}
         handleSelect={handleSelect}
       />
+        {/* adding filter for minimum experience */}
       <SelectComponent
         options={EXPERIENCE}
-        placeholder="Experience"
-        label="Experience"
+        placeholder={LABEL.EXPERIENCE}
+        label={LABEL.EXPERIENCE}
         handleSelect={handleSelect}
       />
+       {/* adding filter for work from offic/home  */}
       <SelectComponent
         options={WORK}
         isMulti
-        placeholder="Work"
-        label="Work"
+        placeholder={LABEL.WORK}
+        label={LABEL.WORK}
         handleSelect={handleSelect}
       />
+       {/* adding filter for minimum base pay */}
       <SelectComponent
         options={MIN_BASE_PAY}
-        placeholder="Min Base Pay"
-        label="Min Base Pay"
+        placeholder={LABEL.MIN_BASE_PAY}
+        label={LABEL.MIN_BASE_PAY}
         handleSelect={handleSelect}
       />
+       {/* adding filter for searching on the basis of company name or location */}
       <label className={styles.inputBox}>
-        <div className={styles.label}>Company/Location</div>
+        <div className={styles.label}>{LABEL.COMPANY_LOCATION}</div>
         <input
           type="text"
           onChange={handleChangeInput}

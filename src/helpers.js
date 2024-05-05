@@ -5,14 +5,12 @@ export const getFilteredList = ({
   work,
   minBasePay,
   jdList,
-  techStack
 }) => {
   const array = [
     "searchInput",
     "roles",
     "experience",
     "work",
-    "techStack",
     "minBasePay",
   ];
   const newList = array.reduce((acc, curr) => {
@@ -45,3 +43,8 @@ export const getFilteredList = ({
 
   return newList;
 };
+
+export const estimatedSalary = (min, max, salaryCurrencyCode) =>
+`Estimated Salary ${
+  salaryCurrencyCode === "USD" ? "$" : "Rs"
+} ${min} - ${max} ${salaryCurrencyCode === "USD" ? "K" : "LPA"}`;
