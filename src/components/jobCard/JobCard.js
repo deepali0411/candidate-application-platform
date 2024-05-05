@@ -36,6 +36,7 @@ const JobCard = ({ cardData }) => {
             </div>
             <div className={styles.button}><button className={styles.showMore}>Show More</button></div>
         </div>
+        <a href={cardData?.jdLink} target="blank">Apply</a>
     </div>
     </div>
   );
