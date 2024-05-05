@@ -1,5 +1,5 @@
 .container {
-    padding: 0 2.4rem 2.4rem;
+    padding: 0 0 2.4rem;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem 4rem;
@@ -10,10 +10,22 @@
         margin-bottom: 0.6rem;
     }
     .input {
-        min-width: 30rem;
+        min-width: 28rem;
         height: 3.2rem;
         padding: 0.2rem 0.8rem;
         border-radius: 0.4rem;
         border: 0.1rem solid rgb(204, 204, 204);
+    }
+}
+
+@media screen and (max-width: 624px) {
+    .container {
+        .inputBox {
+            width: 100%;
+            .input {
+                width: 94%;
+                min-width: 94%;
+            }
+        }
     }
 }

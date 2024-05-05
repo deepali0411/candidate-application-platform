@@ -24,3 +24,19 @@
         gap: 4rem;
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .Dashboard {
+        .cardsContainer {
+            grid-template-columns:1fr 1fr;
+        }
+    }
+}
+
+@media screen and (max-width: 646px) {
+    .Dashboard {
+        .cardsContainer {
+            grid-template-columns:1fr;
+        }
+    }
+}
